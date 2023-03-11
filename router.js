@@ -3,10 +3,11 @@ import ProductController from "./ProductController.js";
 
 const router = new Router();
 
-router.post('/product', ProductController.create); // добавление продукта
-router.get('/products'); // получение списка всех продуктов
-router.get('/products/:id'); // получение продукта по id
-router.put('/products/:id'); // обновление продукта по id
-router.delete('/products/:id'); // удаление продукта по id
+// маршрукты по которым делаются запросы к серверу
+router.post('/products', ProductController.create); // добавление продукта
+router.get('/products', ProductController.getAll); // получение списка всех продуктов
+router.get('/products/:id', ProductController.getOne); // получение продукта по id
+router.put('/products', ProductController.update); // обновление продукта
+router.delete('/products/:id', ProductController.delete); // удаление продукта по id
 
 export default router;
