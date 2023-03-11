@@ -1,5 +1,6 @@
 import mongoose from "mongoose";
 
+// модель продукта
 const Product = new mongoose.Schema({
     category: {type: String, required: true},
     title: {type: String, required: true},

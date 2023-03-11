@@ -1,6 +1,7 @@
 import Product from "./Product.js";
 
 class ProductController {
+
   // добавление нового продукта в БД
   async create(req, res) {
     try {
@@ -36,14 +37,15 @@ class ProductController {
     }
   }
 
-  // обновление продукта TODO
+  // обновление продукта
   async update(req, res) {
     try {
-      const { product } = req.body;
-      if (!product._id) {
+      const { id } = req.params;
+      const product = req.body;
+      if (!id) {
         res.status(400).json({ message: 'ID не указан' })
       }
-      const updatedProduct = await Product.findByIdAndUpdate(product._id, product, { new: true });
+      const updatedProduct = await Product.findByIdAndUpdate(id, product, { new: true });
       return res.json(updatedProduct);
     } catch (error) {
       res.status(500).json(error);
