@@ -2,6 +2,9 @@
   "name": "vape-shop-api",
   "version": "1.0.0",
   "description": "",
+  "engines": {
+    "node": "16.15.0"
+  },
   "main": "index.js",
   "type": "module",
   "scripts": {
